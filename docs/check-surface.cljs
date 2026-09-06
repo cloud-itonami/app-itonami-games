@@ -8,8 +8,9 @@
 ;;
 ;; It does not carry a hardcoded host list — it extracts the hosts from the
 ;; files that declare them (wrangler.jsonc, kotodama.jsonld, the unused Worker
-;; entrypoint, the SvelteKit BFF route), so adding a host to the config brings
-;; it under the check automatically.
+;; entrypoint, the preserved-but-unwired XRPC proxy route moved out of the
+;; deleted SvelteKit BFF — see appview/games-mcp-component/src/xrpc-proxy.ts),
+;; so adding a host to the config brings it under the check automatically.
 ;;
 ;; Taken from the sibling repo cloud-itonami/game-play-uploader, which has the
 ;; same thin-edge shape and the same parent domain. It is generic — it reads the
