@@ -21,7 +21,7 @@ The public self-description page was a SvelteKit route
 (`appview/games-mcp-component/svelte/src/routes/+page.svelte`), built into a
 Cloudflare Worker at `svelte/.svelte-kit/cloudflare/_worker.js`. It is now a
 reagent + re-frame view built from `jp-go-dds` (デジタル庁デザインシステム)
-hiccup, at `appview/games-mcp-component/cljs/src/games/app.cljs`, per this
+hiccup, at `appview/games-mcp-component/cljs/src/games/app.cljk`, per this
 workspace's repo-wide single-page-app + cljs-first UI rules
 (ADR-2608080100, ADR-2608260900). The `svelte/` directory is deleted.
 
@@ -63,7 +63,7 @@ succeeded, so these are genuine absences and not a local DNS fault.
 **Re-measure before trusting this table** — it is dated, and dated tables rot:
 
 ```bash
-nbb docs/check-surface.cljs      # exit 1 today; exit 0 would mean this table is stale
+nbb docs/check-surface.cljk      # exit 1 today; exit 0 would mean this table is stale
 ```
 
 The consequences are concrete:
