@@ -63,7 +63,7 @@ succeeded, so these are genuine absences and not a local DNS fault.
 **Re-measure before trusting this table** — it is dated, and dated tables rot:
 
 ```bash
-nbb docs/check-surface.cljk      # exit 1 today; exit 0 would mean this table is stale
+kbb --backend sci docs/check-surface.cljk      # exit 1 today; exit 0 would mean this table is stale
 ```
 
 The consequences are concrete:
@@ -122,8 +122,8 @@ Build/test (from `cljs/`):
 
 ```bash
 npm install
-npm run build   # shadow-cljs compile app  -> public/js/app.js
-npm test        # shadow-cljs compile test && node out/tests.js
+npm run build   # amu compile --target wasm32-browser app  -> public/js/app.js
+npm test        # amu compile --target wasm32-browser test && node out/tests.js
 ```
 
 Observed on this migration's landing commit: build `111 files, 110 compiled,

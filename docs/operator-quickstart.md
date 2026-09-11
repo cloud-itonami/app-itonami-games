@@ -46,7 +46,7 @@ APP=appview/games-mcp-component
 Run from the repo root:
 
 ```bash
-nbb docs/check-surface.cljk
+kbb --backend sci docs/check-surface.cljk
 ```
 
 Observed — **exit 1, and exit 1 is the expected result today**:
@@ -144,11 +144,11 @@ shared resource governor** — concurrent agent sessions on this machine must
 not run two heavy builds at once:
 
 ```bash
-node /path/to/com-junkawasaki/scripts/resource-guard.mjs run build -- npx shadow-cljs compile app
+node /path/to/com-junkawasaki/scripts/resource-guard.mjs run build -- amu compile --target wasm32-browser app
 ```
 
 Standalone clones outside that superproject have no such script; use
-`npx shadow-cljs compile app` directly.
+`amu compile --target wasm32-browser app` directly.
 
 The guard refuses rather than queues — **exit `2` means "the guard is busy",
 not "the build failed"**; wait and retry.
@@ -170,7 +170,7 @@ ls -la public/js/app.js     # ~3.3 MB (dev build; `npm run release` minifies)
 ## 5. Test the frontend, then probe it locally (≈30s)
 
 ```bash
-node /path/to/com-junkawasaki/scripts/resource-guard.mjs run build -- npx shadow-cljs compile test
+node /path/to/com-junkawasaki/scripts/resource-guard.mjs run build -- amu compile --target wasm32-browser test
 node out/tests.js
 ```
 
